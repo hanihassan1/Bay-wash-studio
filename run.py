@@ -9,8 +9,8 @@ app = Flask(__name__)
 
 connection = pymysql.connect(host='mydatabase.cccssd5sqciz.ca-central-1.rds.amazonaws.com',
                             user='root',
-                            password='root1234',
-                            db='SALON',
+                            password='
+                            db=
                             )
 
 app.secret_key = "its_secure"
@@ -18,11 +18,11 @@ app.secret_key = "its_secure"
 
 app.config['MAIL_SERVER']= 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'baywashstudio@gmail.com'
-app.config['MAIL_PASSWORD'] = "Root12345"
+app.config['MAIL_USERNAME'] = '
+app.config['MAIL_PASSWORD'] = 
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_DEFAULT_SENDER'] = 'baywashstudio@gmail.com'
+app.config['MAIL_DEFAULT_SENDER'] = '
 mail = Mail(app)
 
 
