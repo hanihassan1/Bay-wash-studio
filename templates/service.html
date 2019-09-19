@@ -1,0 +1,119 @@
+{% extends 'base.html' %} {% block head %}
+<script src="{{ url_for('static', filename='js/jquery.min.js')  }}"></script>
+
+<!-- Popper -->
+<script src="{{ url_for('static', filename='js/popper.min.js')  }}"></script>
+
+<!-- Bootstrap -->
+<script src="{{ url_for('static', filename='js/bootstrap.min.js')  }}"></script>
+
+<!-- All Plugins -->
+<script src="{{ url_for('static', filename='js/akame.bundle.js')  }}"></script>
+
+<!-- Active -->
+
+<script src="{{ url_for('static', filename='js/default-assets/active.js')  }}"></script>
+
+<script src="{{ url_for('static', filename='gulpfile.js')  }}"></script>
+
+<script src="{{ url_for('static', filename='js/main.js')  }}"></script>
+{% endblock %} {% block content %}
+
+
+
+<!-- Breadcrumb Area Start -->
+<section class="breadcrumb-area section-padding-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-content">
+                    <h2>Our Services</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{url_for('index')}}"><i class="icon_house_alt"></i> Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Services</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Area End -->
+
+<!-- Service Area Start -->
+<section class="akame-service-area">
+
+    <!-- Single Service Item -->
+    <div class="single--service--item d-flex flex-wrap align-items-center">
+        <!-- Service Content -->
+        <div class="service-content">
+            <div class="service-text">
+                <h2>Hair Cuts</h2>
+                <p><span>Women's Haircut:</span> <span>$35+</span></p>
+                <p><span>Men's Haircut:</span> <span>$25+</span></p>
+
+            </div>
+        </div>
+        <!-- Service Thumbnail -->
+        <div class="service-thumbnail bg-img jarallax" style="background-image: url({{ url_for('static', filename='img/bg-img/32.jpg')  }});"></div>
+    </div>
+
+    <!-- Single Service Item -->
+    <div class="single--service--item odd-item d-flex flex-wrap align-items-center">
+        <!-- Service Thumbnail -->
+        <div class="service-thumbnail bg-img jarallax" style="background-image: url({{ url_for('static', filename='img/bg-img/31.jpg')  }});"></div>
+
+        <!-- Service Content -->
+        <div class="service-content">
+            <div class="service-text">
+                <h2>Hair Dyed</h2>
+                <p><span>Dye L'Oréal:</span> <span>$55+</span></p>
+                <p><span>Dye Davines:</span> <span>$75+</span></p>
+                <p><span>Dye GolDWell:</span> <span>$35+</span></p>
+                <p><span>Dye Oriental:</span> <span>$45+</span></p>
+            </div>
+        </div>
+    </div>
+
+
+ <div class="single--service--item odd-item d-flex flex-wrap align-items-center">
+        <!-- Service Thumbnail -->
+        
+
+        <!-- Service Content -->
+        <div class="service-content">
+            <div class="service-text">
+                <h2>Hair Extentions</h2>
+                <p><span>Micro Bead hair extensions:</span> <span>$200+</span></p>
+                <p><span>Keratin fusion hair extensions:</span> <span>$200+</span></p>
+                <p><span>Tape In hair extensions:</span> <span>$200+</span></p>
+               </div>
+        </div>
+        <div class="service-thumbnail bg-img jarallax" style="background-image: url({{ url_for('static', filename='img/bg-img/27.jpg')  }});"></div>
+    </div>
+
+
+
+    <!-- Single Service Item -->
+    <div class="single--service--item d-flex flex-wrap align-items-center">
+        <div class="service-thumbnail bg-img jarallax" style="background-image: url({{ url_for('static', filename='img/bg-img/30.jpg')  }});"></div>
+        <!-- Service Content -->
+        <div class="service-content">
+            <div class="service-text">
+                <h2>Hair Style</h2>
+                <p><span>Shampoo &amp; Style:</span> <span>$55+</span></p>
+                <p><span>Half-up do style:</span> <span>$45+</span></p>
+                <p><span>Up Do Style:</span> <span>$75+</span></p>
+                <p><span>Bridal &amp; Wedding:</span> <span>$125+</span></p>
+            </div>
+        </div>
+        <!-- Service Thumbnail -->
+        
+    </div>
+
+</section>
+<!-- Service Area End -->
+
+
+{% endblock %}
