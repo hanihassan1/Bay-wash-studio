@@ -20,21 +20,45 @@
 
 
 {% endblock %}
+{% block menu %}
+<div class="classynav">
+                                <ul id="nav">
+                                    <li><a href="{{url_for('index')}}">Home</a></li>
 
-{% block content %}
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
-    <ul class=flashes>
+                                    <li><a href="{{url_for('portfolio')}}">Gallery</a></li>
+                                    <li><a href="{{url_for('service')}}">Services</a></li>
+
+
+                                    <li class="active"><a href="{{url_for('contact')}}">Contact</a></li>
+                                </ul>
+
+                                <!-- Cart Icon -->
+                                <div class="cart-icon ml-5 mt-4 mt-lg-0">
+                                    <a href="{{url_for('contact')}}"><i class="icon_cart"></i></a>
+                                </div>
+
+                                <!-- Book Icon -->
+                                <div class="book-now-btn ml-5 mt-4 mt-lg-0 ml-md-4">
+                                    <a href="{{url_for('contact')}}" class="btn akame-btn">Book Now</a>
+                                </div>
+                            </div>
+{% endblock %}
+
+
+
+{% block content %} {% with messages = get_flashed_messages() %} {% if messages %}
+<ul class=flashes>
     {% for message in messages %}
-      <li><i><b style="font-family: 'Open Sans', sans-serif;font-size: 20px;color:#bca858;">{{ message }}</b></i></li>
+    <li><i><b style="font-family: 'Open Sans', sans-serif;font-size: 20px;color:#bca858;">{{ message }}</b></i></li>
     {% endfor %}
-    </ul>
-  {% endif %}
-{% endwith %}
+</ul>
+{% endif %} {% endwith %}
+
 <!-- Google Maps Start -->
 <div class="akame-google-maps-area">
-   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.9273202843374!2d-79.38946278499324!3d43.670481359331944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34ae67b1bbd7%3A0x147ee3db3e73a20!2s2%20Bloor%20St%20W%2C%20Toronto%2C%20ON%20M5T%201G1%2C%20Canada!5e0!3m2!1sen!2sus!4v1568385681472!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-        
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.9273202843374!2d-79.38946278499324!3d43.670481359331944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34ae67b1bbd7%3A0x147ee3db3e73a20!2s2%20Bloor%20St%20W%2C%20Toronto%2C%20ON%20M5T%201G1%2C%20Canada!5e0!3m2!1sen!2sus!4v1568385681472!5m2!1sen!2sus"
+        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
 </div>
 <!-- Google Maps End -->
 
@@ -56,8 +80,7 @@
                 <div class="single-contact-information mb-80">
                     <i class="icon_pin"></i>
                     <h4>Address</h4>
-                     <p>Address: 2 Bloor West,<br>
-                            Toronto, ON M4W 3R1</p>
+                    <p>Address: 2 Bloor West,<br> Toronto, ON M4W 3R1</p>
                 </div>
             </div>
 
@@ -91,7 +114,7 @@
             <div class="col-12">
                 <div class="section-heading text-center">
                     <h2>Booking</h2>
-                   
+
                 </div>
             </div>
         </div>
@@ -102,31 +125,31 @@
                 <form method="post" class="akame-contact-form border-0 p-0" id="contactForm" novalidate>
                     <div class="row">
                         <div class="col-lg-6">
-                            <input type="text" name="first-name" id="first-name" class="form-control mb-30" placeholder="First Name"required data-validation-required-message="You need to insert your first name please">
+                            <input type="text" name="first-name" id="first-name" class="form-control mb-30" placeholder="First Name" required data-validation-required-message="You need to insert your first name please">
                         </div>
                         <div class="col-lg-6">
-                            <input type="text" name="last-name" id="last-name" class="form-control mb-30" placeholder="Last Name"required data-validation-required-message="You need to insert your last name please">
+                            <input type="text" name="last-name" id="last-name" class="form-control mb-30" placeholder="Last Name" required data-validation-required-message="You need to insert your last name please">
                         </div>
                         <div class="col-lg-6">
-                            <input type="email" name="email" id="email" class="form-control mb-30" placeholder="Email"required data-validation-required-message="You need to insert an email please">
+                            <input type="email" name="email" id="email" class="form-control mb-30" placeholder="Email" required data-validation-required-message="You need to insert an email please">
                         </div>
                         <div class="col-lg-6">
-                            <input type="date" name="date" id="date" class="form-control mb-30" placeholder="DD/MM/YY"required data-validation-required-message="You need to select a date please">
+                            <input type="date" name="date" id="date" class="form-control mb-30" placeholder="DD/MM/YY" required data-validation-required-message="You need to select a date please">
                         </div>
                         <div class="col-lg-6">
-                            <input type="time" name="time" id="time" class="form-control mb-30" placeholder="Time"required data-validation-required-message="You need to select a time please">
+                            <input type="time" name="time" id="time" class="form-control mb-30" placeholder="Time" required data-validation-required-message="You need to select a time please">
                         </div>
                         <div class="col-lg-6">
-                            <input type="phone" name="phone" id="phone" class="form-control mb-30" placeholder="Contact Number"required data-validation-required-message="You need to select a service please">
+                            <input type="phone" name="phone" id="phone" class="form-control mb-30" placeholder="Contact Number" required data-validation-required-message="You need to select a service please">
                         </div>
-                        <select class="col-md-4 form-control service-ops" name="service" id="service" required data-validation-required-message="You need to select a service please" >
+                        <select class="col-md-4 form-control service-ops" name="service" id="service" required data-validation-required-message="You need to select a service please">
                           <option selected>Services</option>
                           <option value="1">Haircut</option>
                           <option value="2">Color</option>
                           <option value="3">Hairstyle</option>
                           <option value="3">Hair Extensions</option>
                         </select>
-                        
+
                         <div class="col-12 text-center">
                             <button type="submit" class="btn akame-btn btn-3 mt-15 active" id="sendMessageButton1">Confirm</button>
                         </div>

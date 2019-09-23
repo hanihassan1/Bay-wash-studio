@@ -9,15 +9,12 @@
 
 
     <!-- Title -->
-    <title>SALON</title>
-
-    
+    <title>Bay Wash Studio</title>
 
     <!-- Stylesheet -->
-    
+
     <link href="{{ url_for('static', filename='style.css')  }}" rel="stylesheet" type="text/css">
-    <link href="{{ url_for('static', filename='mystyles.css')  }}" rel="stylesheet" type="text/css">
-    {% block head %} {% endblock %}
+    <link href="{{ url_for('static', filename='mystyles.css')  }}" rel="stylesheet" type="text/css"> {% block head %} {% endblock %}
 </head>
 
 <body>
@@ -35,7 +32,7 @@
                 <div class="row h-100 align-items-center">
                     <div class="col-5">
                         <div class="top-header-content">
-                            <p>Bay Wash Studio</p>
+
                         </div>
                     </div>
                     <div class="col-7">
@@ -56,7 +53,7 @@
                     <nav class="classy-navbar justify-content-between" id="akameNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="{{url_for('index')}}"><img src="" alt=""></a>
+                        <a class="nav-brand" href="{{url_for('index')}}"> <img src="{{ url_for('static', filename='img/baywayshlogo.png')  }}" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -69,29 +66,11 @@
                             <div class="classycloseIcon">
                                 <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                             </div>
+                            {% block menu %}
                             <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul id="nav">
-                                    <li class="active"><a href="{{url_for('index')}}">Home</a></li>
-
-                                    <li><a href="{{url_for('portfolio')}}">Gallery</a></li>
-                                    <li><a href="{{url_for('service')}}">Services</a></li>
-
-
-                                    <li><a href="{{url_for('contact')}}">Contact</a></li>
-                                </ul>
-
-                                <!-- Cart Icon -->
-                                <div class="cart-icon ml-5 mt-4 mt-lg-0">
-                                    <a href="{{url_for('contact')}}"><i class="icon_cart"></i></a>
-                                </div>
-
-                                <!-- Book Icon -->
-                                <div class="book-now-btn ml-5 mt-4 mt-lg-0 ml-md-4">
-                                    <a href="{{url_for('contact')}}" class="btn akame-btn">Book Now</a>
-                                </div>
-                            </div>
+                            
                             <!-- Nav End -->
+                            {% endblock %}
                         </div>
                     </nav>
                 </div>
@@ -101,11 +80,11 @@
     <!-- Header Area End -->
 
     <!-- Main Area Start -->
-    
+
     <div class="main">
-        
+
         {% block content %} {% endblock %}
-        
+
     </div>
     <!-- Main Area End -->
 
@@ -119,7 +98,7 @@
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="single-footer-widget mb-80">
                         <!-- Footer Logo -->
-                        <a href="#" class="footer-logo"><img src="" alt=""></a>
+                        <a href="#" class="footer-logo"><img src="{{ url_for('static', filename='img/baywayshlogo.png')  }}" alt=""></a>
 
                         <p class="mb-30">We would love to serve you and let you enjoy your salon experience. </p>
 
@@ -170,8 +149,7 @@
                         <div class="contact-address">
                             <p>Tel: (+416) 555-1234</p>
                             <p>E-mail: baywashstudio@gmail.com</p>
-                            <p>Address: 2 Bloor West,<br>
-                            Toronto, ON M4W 3R1</p>
+                            <p>Address: 2 Bloor West,<br> Toronto, ON M4W 3R1</p>
                         </div>
                     </div>
                 </div>
@@ -181,23 +159,25 @@
     </footer>
     <!-- Footer Area End -->
 
+ 
+
     <!-- All JS Files -->
     <!-- jQuery -->
-       <script src="{{ url_for('static', filename='js/jquery.min.js')  }}"></script>
-   
+    <script src="{{ url_for('static', filename='js/jquery.min.js')  }}"></script>
+
     <!-- Popper -->
     <script src="{{ url_for('static', filename='js/popper.min.js')  }}"></script>
-    
+
     <!-- Bootstrap -->
-     <script src="{{ url_for('static', filename='js/bootstrap.min.js')  }}"></script>
-   
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')  }}"></script>
+
     <!-- All Plugins -->
     <script src="{{ url_for('static', filename='js/akame.bundle.js')  }}"></script>
 
     <!-- Active -->
-    
+
     <script src="{{ url_for('static', filename='js/default-assets/active.js')  }}"></script>
-   
+
     <script src="{{ url_for('static', filename='gulpfile.js')  }}"></script>
 
     <script src="{{ url_for('static', filename='js/main.js')  }}"></script>
