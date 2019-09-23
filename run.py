@@ -120,7 +120,7 @@ def send_mail(username, email):
     user_mail_list.append(email)
     print(user_mail_list,"user_mail_list")
     msg = Message(subject="Hello, {}".format(username),recipients=user_mail_list)
-    msg.body="""<b>You're booked!</b>\n\nYour appointment is on: {}.\n\nYour Time is {}.""" .format(request.form['date'],
+    msg.body="""<p><b>You're booked!</b></p><p>Your appointment is on: {}.</p> <p>Your Time is {}.</p>""".format(request.form['date'],
     request.form['time'])
     mail.send(msg)
     
