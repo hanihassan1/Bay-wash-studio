@@ -1,4 +1,6 @@
 Data centric development– Bay Wash Studio - Client Site.
+
+
 Bay Wash Studio is a salon website. The salon offers a few different services: haircuts, hair style, color, and hair extensions. Clients can book an appointment, see on the home page which stylists work there and they can view the services offered. Once the client has booked an appointment, they receive a friendly confirmation email. 
 Along with this website. There is a second part, a website for the staff at the salon to. With this site the staff can view all the client bookings. 
 
@@ -11,10 +13,12 @@ Link to employee site -https://bay-wash-salon---employee.herokuapp.com/
 
 
 Planning/Logic and resources:
+
 I worked on the frontend first to make the site appealing as well as responsive. Second, the database and the API calls.  JavaScript and jQuery were used in the API calls. The API’s were also used to fetch the data from the database. Mysql was used to write the queries, these queries created the database as well as the tables and then inner joining them.
 
  
 Technologies:
+
 This website was developed using: HTML, CSS, Bootstrap, jQuery, JavaScript, Python3, Flask. Bootstrap theme was used, with my editions.
 
 Packages:
