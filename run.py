@@ -8,10 +8,10 @@ import pymysql
 app = Flask(__name__)
 
 connection = pymysql.connect(host='mydatabase.cccssd5sqciz.ca-central-1.rds.amazonaws.com',
-                            user='***',
-                            password='***',
-                            db='SALON'
-                            )  
+                            user=os.environ.get('user'),
+                            password=os.environ.get('pass'),
+                            db='SALON',
+                            )
                             
 # def create_db():
 #     with connection.cursor() as cursor:
