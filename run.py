@@ -8,9 +8,9 @@ import pymysql
 app = Flask(__name__)
 
 connection = pymysql.connect(host='mydatabase.cccssd5sqciz.ca-central-1.rds.amazonaws.com',
-                            user=os.environ.get('user'),
-                            password=os.environ.get('pass'),
-                            db='SALON',
+                            user="****",
+                            password="****",
+                            db="****",
                             )
                             
 # def create_db():
@@ -188,5 +188,5 @@ def add_booking(date, service_id, time,customer_id):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),
-    debug=True)
+    debug=False)
     
