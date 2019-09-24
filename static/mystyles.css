@@ -1,7 +1,19 @@
 /*service input in contact.html*/
 
-.service-ops{
+.service-ops {
 
-    margin-left: 34%;
+    margin-left: 24%;
     margin-right: 24%;
+}
+
+.section-heading {
+    color: #bca858;
+}
+
+.formsubmit {
+    color: #ffffff;
+    border-radius: 60px;
+    border-color: #bca858;
+    background-color: #bca858;
+
 }

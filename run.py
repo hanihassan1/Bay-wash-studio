@@ -120,7 +120,7 @@ def send_mail(username, email):
     user_mail_list.append(email)
     print(user_mail_list,"user_mail_list")
     msg = Message(subject="Hello, {}".format(username),recipients=user_mail_list)
-    msg.html="""<p><b style="color:gold">You're booked!</b></p><p>Your appointment is on: <b><i>{}</i></b>.</p> <p>Your Time is:<b><i>{}</i></b>.</p>""".format(request.form['date'],
+    msg.html="""<p><b style="color:gold>You're booked!</b></p><p>Your appointment is on: <b><i>{}</i></b>.</p> <p>Your Time is:<b><i>{}</i></b>.</p>""".format(request.form['date'],
     request.form['time'])
     mail.send(msg)
     
@@ -188,5 +188,5 @@ def add_booking(date, service_id, time,customer_id):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),
-    debug=False)
+    debug=True)
     

@@ -1,4 +1,6 @@
 {% extends 'base.html' %} {% block head %}
+<link href="https://cdn.jsdelivr.net/bootstrap.timepicker/0.2.6/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+
 <script src="{{ url_for('static', filename='js/jquery.min.js')  }}"></script>
 
 <!-- Popper -->
@@ -10,6 +12,10 @@
 <!-- All Plugins -->
 <script src="{{ url_for('static', filename='js/akame.bundle.js')  }}"></script>
 
+<script src="https://cdn.jsdelivr.net/bootstrap.timepicker/0.2.6/js/bootstrap-timepicker.min.js"></script>
+
+
+
 <!-- Active -->
 
 <script src="{{ url_for('static', filename='js/default-assets/active.js')  }}"></script>
@@ -19,34 +25,31 @@
 <script src="{{ url_for('static', filename='js/main.js')  }}"></script>
 
 
-{% endblock %}
-{% block menu %}
+
+
+{% endblock %} {% block menu %}
 <div class="classynav">
-                                <ul id="nav">
-                                    <li><a href="{{url_for('index')}}">Home</a></li>
+    <ul id="nav">
+        <li><a href="{{url_for('index')}}">Home</a></li>
 
-                                    <li><a href="{{url_for('portfolio')}}">Gallery</a></li>
-                                    <li><a href="{{url_for('service')}}">Services</a></li>
-
-
-                                    <li class="active"><a href="{{url_for('contact')}}">Contact</a></li>
-                                </ul>
-
-                                <!-- Cart Icon -->
-                                <div class="cart-icon ml-5 mt-4 mt-lg-0">
-                                    <a href="{{url_for('contact')}}"><i class="icon_cart"></i></a>
-                                </div>
-
-                                <!-- Book Icon -->
-                                <div class="book-now-btn ml-5 mt-4 mt-lg-0 ml-md-4">
-                                    <a href="{{url_for('contact')}}" class="btn akame-btn">Book Now</a>
-                                </div>
-                            </div>
-{% endblock %}
+        <li><a href="{{url_for('portfolio')}}">Gallery</a></li>
+        <li><a href="{{url_for('service')}}">Services</a></li>
 
 
+        <li class="active"><a href="{{url_for('contact')}}">Contact</a></li>
+    </ul>
 
-{% block content %} {% with messages = get_flashed_messages() %} {% if messages %}
+    <!-- Cart Icon -->
+    <div class="cart-icon ml-5 mt-4 mt-lg-0">
+        <a href="{{url_for('contact')}}"><i class="icon_cart"></i></a>
+    </div>
+
+    <!-- Book Icon -->
+    <div class="book-now-btn ml-5 mt-4 mt-lg-0 ml-md-4">
+        <a href="{{url_for('contact')}}" class="btn akame-btn">Book Now</a>
+    </div>
+</div>
+{% endblock %} {% block content %} {% with messages = get_flashed_messages() %} {% if messages %}
 <ul class=flashes>
     {% for message in messages %}
     <li><i><b style="font-family: 'Open Sans', sans-serif;font-size: 20px;color:#bca858;">{{ message }}</b></i></li>
@@ -63,6 +66,8 @@
 <!-- Google Maps End -->
 
 <!-- Contact Information Area Start -->
+
+
 <section class="contact-information-area section-padding-80-0">
     <div class="container">
         <div class="row">
@@ -122,7 +127,7 @@
         <div class="row">
             <div class="col-12">
                 <!-- Form -->
-                <form method="post" class="akame-contact-form border-0 p-0" id="contactForm" novalidate>
+                <form method="post" class="akame-contact-form border-0 p-0" id="contactForm">
                     <div class="row">
                         <div class="col-lg-6">
                             <input type="text" name="first-name" id="first-name" class="form-control mb-30" placeholder="First Name" required data-validation-required-message="You need to insert your first name please">
@@ -133,16 +138,21 @@
                         <div class="col-lg-6">
                             <input type="email" name="email" id="email" class="form-control mb-30" placeholder="Email" required data-validation-required-message="You need to insert an email please">
                         </div>
+
                         <div class="col-lg-6">
                             <input type="date" name="date" id="date" class="form-control mb-30" placeholder="DD/MM/YY" required data-validation-required-message="You need to select a date please">
                         </div>
+                        
                         <div class="col-lg-6">
-                            <input type="time" name="time" id="time" class="form-control mb-30" placeholder="Time" required data-validation-required-message="You need to select a time please">
+                        <input  type="text" name="time" id="time"  class="form-control mb-30 timepicker" placeholder="Time" required data-validation-required-message="You need to select a time please">
                         </div>
-                        <div class="col-lg-6">
+
+                        
+
+                        <div class="col-sm-6">
                             <input type="phone" name="phone" id="phone" class="form-control mb-30" placeholder="Contact Number" required data-validation-required-message="You need to select a service please">
                         </div>
-                        <select class="col-md-4 form-control service-ops" name="service" id="service" required data-validation-required-message="You need to select a service please">
+                        <select class="col-sm-6 form-control service-ops" name="service" id="service" required data-validation-required-message="You need to select a service please">
                           <option selected>Services</option>
                           <option value="1">Haircut</option>
                           <option value="2">Color</option>
@@ -151,7 +161,7 @@
                         </select>
 
                         <div class="col-12 text-center">
-                            <button type="submit" class="btn akame-btn btn-3 mt-15 active" id="sendMessageButton1">Confirm</button>
+                            <button type="submit"  class="btn akame-btn btn-3 mt-15 active submit formsubmit" id="sendMessageButton1">Confirm</button>
                         </div>
                     </div>
                 </form>
@@ -161,6 +171,15 @@
 </section>
 <!-- Contact Area End -->
 
-
+<script type="text/javascript">
+     $('#time').timepicker({
+    showInputs: false
+  });
+    $( document ).ready(function() {
+   
+    // alert("here");
+});
+    
+</script>
 
 {% endblock %}
