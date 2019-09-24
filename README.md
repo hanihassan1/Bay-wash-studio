@@ -1,4 +1,4 @@
-#Data centric development– Bay Wash Studio.
+#Data centric development– Bay Wash Studio - Client Site.
 Bay Wash Studio is a salon website. The salon offers a few different services: haircuts, hair style, color, and hair extensions. Clients can book an appointment, see on the home page which stylists work there and they can view the services offered. Once the client has booked an appointment, they receive a friendly confirmation email. 
 Along with this website. There is a second part, a website for the staff at the salon to. With this site the staff can view all the client bookings. 
 
