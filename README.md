@@ -5,9 +5,9 @@ Along with this website. There is a second part, a website for the staff at the 
 
 ##Links:
 
-Heroku –
-Github –
-Link to employee site - 
+Heroku –https://bay-wash-studio.herokuapp.com/
+
+Link to employee site -https://bay-wash-salon---employee.herokuapp.com/ 
 
 
 ##Planning/Logic and resources:
