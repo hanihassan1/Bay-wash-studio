@@ -13,73 +13,7 @@ connection = pymysql.connect(host='mydatabase.cccssd5sqciz.ca-central-1.rds.amaz
                             db="****",
                             )
                             
-# def create_db():
-#     with connection.cursor() as cursor:
-#             sql_book = """DROP TABLE IF EXISTS `BOOKINGS`;"""
-#             cursor.execute(sql_book)
-#             connection.commit()
-            
-#             sql_cust = """DROP TABLE IF EXISTS `CUSTOMERS`;"""
-#             cursor.execute(sql_cust)
-#             connection.commit()
-            
-#             sql_emp = """DROP TABLE IF EXISTS `EMPLOYEE`;"""
-#             cursor.execute(sql_emp)
-#             connection.commit()
-            
-#             sql_ser = """DROP TABLE IF EXISTS `SERVICES`;"""
-#             cursor.execute(sql_ser)
-#             connection.commit()
-            
-#             sql = """CREATE TABLE `BOOKINGS` (
-#   `BOOKING_ID` int(11) NOT NULL AUTO_INCREMENT,
-#   `SERVICE_ID` int(11) DEFAULT NULL,
-#   `CUSTOMER_ID` int(11) DEFAULT NULL,
-#   `DATE` varchar(12) DEFAULT NULL,
-#   `TIME` varchar(12) DEFAULT NULL,
-#   PRIMARY KEY (`BOOKING_ID`)
-# ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;"""
-#             cursor.execute(sql)
-#             connection.commit()
-            
-#             sql1 = """CREATE TABLE `CUSTOMERS` (
-#   `CUSTOMER_ID` int(11) NOT NULL AUTO_INCREMENT,
-#   `CUSTOMER_NAME` varchar(30) DEFAULT NULL,
-#   `CUSTOMER_EMAIL` varchar(50) DEFAULT NULL,
-#   `CUSTOMER_TELEPHONE` varchar(15) DEFAULT NULL,
-#   PRIMARY KEY (`CUSTOMER_ID`)
-# ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;"""
-#             cursor.execute(sql1)
-#             connection.commit()
-            
-#             sql2 = """CREATE TABLE `EMPLOYEE` (
-#   `EMPLOYEE_ID` int(11) NOT NULL AUTO_INCREMENT,
-#   `EMPLOYEE_NAME` varchar(30) DEFAULT NULL,
-#   `YEARS_OF_EXPERIENCE` int(11) DEFAULT NULL,
-#   `EMPLOYEE_TELEPHONE` int(11) DEFAULT NULL,
-#   `EMPLOYEE_ADDRESS` varchar(100) DEFAULT NULL,
-#   `EMPLOYEE_EMAIL` varchar(50) DEFAULT NULL,
-#   `SERVICE_ID` int(11) DEFAULT NULL,
-#   PRIMARY KEY (`EMPLOYEE_ID`)
-# ) ENGINE=InnoDB DEFAULT CHARSET=latin1;"""
-#             cursor.execute(sql2)
-#             connection.commit()
-            
-#             sql3 = """CREATE TABLE `SERVICES` (
-#   `SERVICE_ID` int(11) NOT NULL AUTO_INCREMENT,
-#   `SERVICE_NAME` varchar(50) DEFAULT NULL,
-#   `DESCRIPTION` varchar(300) DEFAULT NULL,
-#   PRIMARY KEY (`SERVICE_ID`)
-# ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;"""
-#             cursor.execute(sql3)
-#             connection.commit()
-            
-#             sql4 = """INSERT INTO `SERVICES` VALUES (1,'HAIRCUT',"Women's Haircut,Men's Haircut"),(2,'COLOR',"Dye L'Oréal,Dye Davines,Dye GolDWell,Dye Oriental"),(3,'HAIRSTYLE',"Shampoo AND Blow Dry,Formal Styling, bridal and wedding, updo style"),
-#             (4,'HAIR EXTENSION',"Micro Bead hair extensions");"""
-#             cursor.execute(sql4)
-#             connection.commit()
-            
-# create_db()
+
 
 app.secret_key = "its_secure"
 
@@ -145,7 +79,9 @@ def portfolio():
 def service():
      return render_template("service.html", title = "Services")
     
+    
 # queries to get: user / last user id and booking information
+
 def add_user(username, phone, email):
     try:
         with connection.cursor() as cursor:
@@ -179,7 +115,7 @@ def add_booking(date, service_id, time,customer_id):
         cursor.close()
   finally:
            
-            print("close it")
+            print()
 
 
 

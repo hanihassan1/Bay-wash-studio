@@ -17,34 +17,29 @@
 <script src="{{ url_for('static', filename='gulpfile.js')  }}"></script>
 
 <script src="{{ url_for('static', filename='js/main.js')  }}"></script>
-{% endblock %} 
-
-{% block menu %}
+{% endblock %} {% block menu %}
 <div class="classynav">
-                                <ul id="nav">
-                                    <li><a href="{{url_for('index')}}">Home</a></li>
+    <ul id="nav">
+        <li><a href="{{url_for('index')}}">Home</a></li>
 
-                                    <li><a href="{{url_for('portfolio')}}">Gallery</a></li>
-                                    <li class="active"><a href="{{url_for('service')}}">Services</a></li>
-
-
-                                    <li><a href="{{url_for('contact')}}">Contact</a></li>
-                                </ul>
-
-                                <!-- Cart Icon -->
-                                <div class="cart-icon ml-5 mt-4 mt-lg-0">
-                                    <a href="{{url_for('contact')}}"><i class="icon_cart"></i></a>
-                                </div>
-
-                                <!-- Book Icon -->
-                                <div class="book-now-btn ml-5 mt-4 mt-lg-0 ml-md-4">
-                                    <a href="{{url_for('contact')}}" class="btn akame-btn">Book Now</a>
-                                </div>
-                            </div>
-{% endblock %}
+        <li><a href="{{url_for('portfolio')}}">Gallery</a></li>
+        <li class="active"><a href="{{url_for('service')}}">Services</a></li>
 
 
-{% block content %}
+        <li><a href="{{url_for('contact')}}">Contact</a></li>
+    </ul>
+
+    <!-- Cart Icon -->
+    <div class="cart-icon ml-5 mt-4 mt-lg-0">
+        <a href="{{url_for('contact')}}"><i class="icon_cart"></i></a>
+    </div>
+
+    <!-- Book Icon -->
+    <div class="book-now-btn ml-5 mt-4 mt-lg-0 ml-md-4">
+        <a href="{{url_for('contact')}}" class="btn akame-btn">Book Now</a>
+    </div>
+</div>
+{% endblock %} {% block content %}
 
 
 
@@ -104,9 +99,9 @@
     </div>
 
 
- <div class="single--service--item odd-item d-flex flex-wrap align-items-center">
+    <div class="single--service--item odd-item d-flex flex-wrap align-items-center">
         <!-- Service Thumbnail -->
-        
+
 
         <!-- Service Content -->
         <div class="service-content">
@@ -115,7 +110,7 @@
                 <p><span>Micro Bead hair extensions:</span> <span>$200+</span></p>
                 <p><span>Keratin fusion hair extensions:</span> <span>$200+</span></p>
                 <p><span>Tape In hair extensions:</span> <span>$200+</span></p>
-               </div>
+            </div>
         </div>
         <div class="service-thumbnail bg-img jarallax" style="background-image: url({{ url_for('static', filename='img/bg-img/27.jpg')  }});"></div>
     </div>
@@ -136,7 +131,7 @@
             </div>
         </div>
         <!-- Service Thumbnail -->
-        
+
     </div>
 
 </section>
